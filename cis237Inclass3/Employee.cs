@@ -26,7 +26,7 @@ namespace cis237Inclass3
             set { lastName = value; }
         }
 
-        public string FirstName
+        public string Department
         {
             get { return department; }
             set { department = value; }
@@ -40,6 +40,19 @@ namespace cis237Inclass3
             this.department = Department;
         }
 
+        public override string ToString()
+        {
+            return this.FirstName + " " + this.LastName;
+        }
 
+        // Public - can be accessed by itself, its inheritants, and everyone else
+        // Protected - can be accessed by itself and its inheritants
+            // virtual - any of my subclasses are allowed to override this method
+        // Private - can only be accessed by itself
+
+        protected virtual void PrintFullName()                                  
+        {
+            Console.WriteLine(this.FirstName + " " + this.LastName);
+        }
     }
 }
